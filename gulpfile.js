@@ -23,6 +23,7 @@ const css = () =>
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(prefixer({ cascade: false }))
     .pipe(gcmq())
+    .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/styles/'))
     .on('end', browserSync.reload)
@@ -32,6 +33,12 @@ const img = () =>
     .src('./src/images/**/*.{gif,jpeg,png,webp}')
     .pipe(webp())
     .pipe(gulp.dest('./dist/images/'))
+    .on('end', browserSync.reload)
+    
+const static = () =>
+  gulp
+    .src('./src/static/*.*')
+    .pipe(gulp.dest('./dist/static'))
     .on('end', browserSync.reload)
 
 const font = () =>
@@ -66,4 +73,4 @@ const watch = () => {
   gulp.watch('./src/scss/**/*.scss', css)
 }
 
-gulp.task('default', gulp.parallel(html, css, script, img, font, server, watch))
+gulp.task('default', gulp.parallel(html, css, script,static, img, font, server, watch))
