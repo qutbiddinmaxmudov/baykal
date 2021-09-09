@@ -1,5 +1,9 @@
+@import 'layout/mixin';
+@import 'layout/preset';
 @import 'layout/font';
+@import 'components/header';
 
-h1 {
-  font-family: 'PTSerif';
+.intro{
+  background: url(../images/headerBackground.jfif) center / cover no-repeat;
+  min-height: 100vh;
 }

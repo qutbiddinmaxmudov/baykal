@@ -1,0 +1,16 @@
+header.header 
+  .container.header__content
+    a.logo(href="/")
+      img.logo__image(src="images/logo.webp", alt="Байкальский отдых логотип")
+      .logo__text 
+        h3.logo__title Байкальский отдых
+        p.logo__subtitle Турагентство
+    .header__contacts 
+      a(href="tel:+89243541540").header__info 8-924-3-541-540
+      a(href="mailto:baikalholiday@mail.ru").header__info baikalholiday@mail.ru
+      button.header__button Обратный звонок
+  .header__divider 
+  ul.container.header__list 
+    each anchor in [{link:'/reserve', text: 'Бронирование'},{link:'/tour', text: 'Экскурсии'},{link:'/tour-to-baykal', text: 'Туры на Байкал'},{link:'/about-baykal', text: 'О Байкале'},{link:'/about-us', text: 'О нас'},]
+      li 
+        a(href=anchor.link).header__link=anchor.text 
