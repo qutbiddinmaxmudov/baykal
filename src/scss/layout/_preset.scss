@@ -76,17 +76,28 @@ h4 {
   line-height: 21px;
   letter-spacing: 0.02em;
   color: #000000;
+
   @include media($sm) {
     font-size: 16px;
     line-height: 19px;
   }
 }
 
-.container{
+.container {
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
-  max-width: 1140px;
+
+  $sizes: (1150px: 1200px,
+      960px: 992px,
+      720px: 768px,
+      520px: 576px,
+    );
+  @each $size, $breakpoint in $sizes {
+    @media(min-width: $breakpoint){
+      max-width: $size;
+    }
+  }
 }
