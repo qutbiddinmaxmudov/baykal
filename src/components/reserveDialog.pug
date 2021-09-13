@@ -1,0 +1,19 @@
+.reserve-dialog 
+  .reserve-dialog__window 
+    button.reserve-dialog__close
+    h4.reserve-dialog__title Забронируйте отдых на Байкале
+    form(action="").reserve-dialog__form
+      input(type="text" placeholder="Ваше имя" required).reserve-dialog__input
+      input(type="text" placeholder="Телефон" required).reserve-dialog__input
+      input(type="text" placeholder="E-mail" required).reserve-dialog__input
+      input(type="text" placeholder="Местность Байкала" required).reserve-dialog__input
+      input(type="text" placeholder="Количество взрослых" required).reserve-dialog__input
+      input(type="text" placeholder="Количество детей, их возраст" required).reserve-dialog__input
+      input(type="text" placeholder="Дата заезда" required).reserve-dialog__input.w-50
+      input(type="text" placeholder="Дата отъезда" required).reserve-dialog__input.w-50
+      textarea(placeholder="Комментарий").reserve-dialog__input.reserve-dialog__placeholder
+      input(type="checkbox" hidden)#policy
+      label(for="policy").reserve-dialog__policy
+        span 
+        = "Согласие на обработку персональных данных"
+      button.header__sidebar-tour Отправить заявку
